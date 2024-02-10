@@ -1,26 +1,93 @@
-# Write a function that accepts string from user and print all permutations of that string.
+# Dictionary of movies
 
-def swap(s: str, index1: int, index2: int) -> str:
-    if index1 == index2:
-        return s
-    lindex, gindex = (index1, index2) if index1 < index2 else (index2, index1)
-    return s[:lindex] + s[gindex] + s[lindex + 1:gindex] + s[lindex] + s[gindex + 1:]
+movies = [
+{
+"name": "Usual Suspects", 
+"imdb": 7.0,
+"category": "Thriller"
+},
+{
+"name": "Hitman",
+"imdb": 6.3,
+"category": "Action"
+},
+{
+"name": "Dark Knight",
+"imdb": 9.0,
+"category": "Adventure"
+},
+{
+"name": "The Help",
+"imdb": 8.0,
+"category": "Drama"
+},
+{
+"name": "The Choice",
+"imdb": 6.2,
+"category": "Romance"
+},
+{
+"name": "Colonia",
+"imdb": 7.4,
+"category": "Romance"
+},
+{
+"name": "Love",
+"imdb": 6.0,
+"category": "Romance"
+},
+{
+"name": "Bride Wars",
+"imdb": 5.4,
+"category": "Romance"
+},
+{
+"name": "AlphaJet",
+"imdb": 3.2,
+"category": "War"
+},
+{
+"name": "Ringing Crime",
+"imdb": 4.0,
+"category": "Crime"
+},
+{
+"name": "Joking muck",
+"imdb": 7.2,
+"category": "Comedy"
+},
+{
+"name": "What is the name",
+"imdb": 9.2,
+"category": "Suspense"
+},
+{
+"name": "Detective",
+"imdb": 7.0,
+"category": "Suspense"
+},
+{
+"name": "Exam",
+"imdb": 4.2,
+"category": "Thriller"
+},
+{
+"name": "We Two",
+"imdb": 7.2,
+"category": "Romance"
+}
+]
 
-def permutation_helper(s, l: int, r: int, res: list[str], prefix: str): 
-    print (s, l, r, res, prefix)
-    if l == r:
-        res.append(prefix+s[l])
-        return 
-    for i in range(l, r+1): 
-        s1 = swap(s, l, i)
-        permutation_helper(s1, l+1, r, res, prefix+s1[l]) 
+#Write a function that takes a category and computes the average IMDB score.
 
-def permutation(s: str):
-    res = []
-    permutation_helper(s, 0, len(s)-1, res, "")
-    print(res, len(res))
+def average_category(cat: str):
+    average = 0
+    for i in  movies:
+        if i["category"] == cat:
+            average += i["imdb"]
 
-s = input()
-permutation(s)
+    average /= len(movies)
+    return average
 
-#done
+category_of_movies = str(input("Write category of movie:\n"))
+print(average_category(category_of_movies))
