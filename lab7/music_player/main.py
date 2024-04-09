@@ -8,24 +8,24 @@ clock = pygame.time.Clock()
 
 button_size = 60
 play_button = pygame.transform.scale(
-    pygame.image.load(os.path.normpath("lab_7/music_player/img/play.png")),
+    pygame.image.load(os.path.normpath("img/play.png")),
     (button_size, button_size),
 )
 pause_button = pygame.transform.scale(
-    pygame.image.load(os.path.normpath("lab_7/music_player/img/pause.png")),
+    pygame.image.load(os.path.normpath("img/pause.png")),
     (button_size, button_size),
 )
 
 songs = [
-    "lab_7/music_player/music/reflections.mp3",
-    "lab_7/music_player/music/popular.mp3",
-    "lab_7/music_player/music/from-the-start.mp3",
+    "music/reflections.mp3",
+    "music/popular.mp3",
+    "music/from-the-start.mp3",
 ]
 
 covers = [
-    "lab_7/music_player/img/reflections.jpeg",
-    "lab_7/music_player/img/popular.jpg",
-    "lab_7/music_player/img/fromthestart.jpg",
+    "img/reflections.jpeg",
+    "img/popular.jpg",
+    "img/fromthestart.jpg",
 ]
 
 current_song_index = 0
