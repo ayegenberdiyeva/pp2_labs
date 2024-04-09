@@ -6,9 +6,9 @@ pygame.init()
 screen = pygame.display.set_mode((800, 800))
 pygame.display.set_caption("Mickey Mouse clock")
 
-bg_img = pygame.image.load("lab_7/clock/img/mainclock.png")
-min_img = pygame.image.load("lab_7/clock/img/rightarm.png")
-sec_img = pygame.image.load("lab_7/clock/img/leftarm.png")
+bg_img = pygame.image.load("img/mainclock.png")
+min_img = pygame.image.load("img/rightarm.png")
+sec_img = pygame.image.load("img/leftarm.png")
 rect = bg_img.get_rect(center=(400, 400))
 
 running = True
